@@ -32,6 +32,11 @@ public class MembersService {
         this.membersRepository = membersRepository;
     }
 
+    public List<Members> saveMembers(List<Members> membersList){
+        List<Members> result = membersRepository.save(membersList);
+        return result;
+    }
+
     public void changeMemberBalance(NewPaymentRequest request) {
         membersRepository.changeMemberBalance(request.getAmount(), request.getPayer_id());
         Double amountPerMember = countAmountPerLoaner(request.getAmount(), request.getLoanersList());

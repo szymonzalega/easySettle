@@ -2,13 +2,16 @@ package com.easysettle.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.easysettle.domain.Members;
+import com.easysettle.domain.type.ActionResultStatus;
 import com.easysettle.service.MembersService;
+import com.easysettle.service.dto.ActionResult;
 import com.easysettle.service.dto.SettleDebtResult;
 import com.easysettle.web.rest.errors.BadRequestAlertException;
 import com.easysettle.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -122,5 +125,18 @@ public class MembersResource {
     public List<SettleDebtResult> settleDebt() {
         List<SettleDebtResult> settleDebtResultList = membersService.settleDebts();
         return settleDebtResultList;
+    }
+
+    @PostMapping("members/saveMembers")
+    public ResponseEntity<ActionResult> saveMembers(@Valid @RequestBody List<Members> membersList) throws URISyntaxException {
+        try {
+            log.debug("REST request to save Members list");
+            membersService.saveMembers(membersList);
+            ActionResult result = ActionResult.builder().result(ActionResultStatus.SUCCESS.toString()).messageError(null).build();
+            return ResponseEntity.ok(result);
+        } catch(Exception ex) {
+            ActionResult result = ActionResult.builder().result(ActionResultStatus.ERROR.toString()).messageError("Error adding payments").build();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        }
     }
 }

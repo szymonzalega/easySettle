@@ -119,6 +119,9 @@
         .state('groups.edit', {
             parent: 'groups',
             url: '/{id}/edit',
+            params: {
+                group: null
+            },
             data: {
                 authorities: ['ROLE_USER']
             },
@@ -128,12 +131,7 @@
                     controller: 'GroupsDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
-                    size: 'lg',
-                    resolve: {
-                        entity: ['Groups', function(Groups) {
-                            return Groups.get({id : $stateParams.id}).$promise;
-                        }]
-                    }
+                    size: 'lg'
                 }).result.then(function() {
                     $state.go('groups', null, { reload: 'groups' });
                 }, function() {

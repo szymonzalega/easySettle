@@ -1,5 +1,5 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+<form name="editForm" role="form">
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -26,12 +26,65 @@
             </div>
         </div>
 
+        <button type="button" class="btn btn-default" ng-click="vm.addNewMemberInput = true">
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;<span>Dodaj uczestnika</span>
+        </button>
+
+        <div ng-repeat="member in vm.memberList">
+            <div class="row">
+                <div class="col-md-7 col-lg-7">
+                    <h2>{{member.name}}</h2>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="button"
+                                ng-click="vm.editMember($index)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down">Edytuj</span>
+                        </button>
+                        <button type="button"
+                                ng-click="vm.removeMember($index)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down">Usuń</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <pre>{{vm.memberIndex}}</pre>
+
+        <div class="row" ng-if="vm.addNewMemberInput">
+            <div class="col-md-8 col-lg-8">
+                <div class="form-group">
+                    <label class="control-label" for="member_name">Imie uczestnika</label>
+                    <input type="text" class="form-control" name="name" id="member_name"
+                           ng-model="vm.member.name"/>
+                    <div ng-show="editForm.name.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <button type="button" class="btn btn-default" ng-click="vm.saveMemberInGroup()">
+                    <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Zapisz</span>
+                </button>
+            </div>
+        </div>
+
+
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+        <button type="submit" ng-click="vm.saveGroup()" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
             <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
         </button>
     </div>

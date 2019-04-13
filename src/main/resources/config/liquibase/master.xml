@@ -8,6 +8,7 @@
     <include file="config/liquibase/changelog/20190413090714_added_entity_Groups.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190413091514_added_entity_Members.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190413092854_added_entity_Transfers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190413093156_added_entity_Payments.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190413091514_added_entity_constraints_Members.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190413092854_added_entity_constraints_Transfers.xml" relativeToChangelogFile="false"/>

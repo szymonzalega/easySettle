@@ -1,5 +1,10 @@
 package com.easysettle.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -12,6 +17,9 @@ import java.util.Objects;
 /**
  * A Transfers.
  */
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "transfers")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -35,6 +43,8 @@ public class Transfers implements Serializable {
     private Members loaner;
 
     @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "payments_id", nullable = false)
     private Payments payments;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -122,8 +132,10 @@ public class Transfers implements Serializable {
     @Override
     public String toString() {
         return "Transfers{" +
-            "id=" + getId() +
-            ", amount=" + getAmount() +
-            "}";
+            "id=" + id +
+            ", amount=" + amount +
+            ", payer=" + payer +
+            ", loaner=" + loaner +
+            '}';
     }
 }

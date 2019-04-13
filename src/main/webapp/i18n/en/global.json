@@ -10,6 +10,7 @@
                 "groups": "Groups",
                 "members": "Members",
                 "transfers": "Transfers",
+                "payments": "Payments",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

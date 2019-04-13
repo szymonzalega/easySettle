@@ -44,6 +44,8 @@ public class CacheConfiguration {
             cm.createCache(com.easysettle.domain.Groups.class.getName(), jcacheConfiguration);
             cm.createCache(com.easysettle.domain.Members.class.getName(), jcacheConfiguration);
             cm.createCache(com.easysettle.domain.Transfers.class.getName(), jcacheConfiguration);
+            cm.createCache(com.easysettle.domain.Payments.class.getName(), jcacheConfiguration);
+            cm.createCache(com.easysettle.domain.Payments.class.getName() + ".transfers", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

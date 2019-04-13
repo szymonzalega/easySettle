@@ -1,0 +1,27 @@
+
+{
+    "easySettleApp": {
+        "payments" : {
+            "home": {
+                "title": "Payments",
+                "createLabel": "Create a new Payments",
+                "createOrEditLabel": "Create or edit a Payments"
+            },
+            "created": "A new Payments is created with identifier {{ param }}",
+            "updated": "A Payments is updated with identifier {{ param }}",
+            "deleted": "A Payments is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Payments {{ id }}?"
+            },
+            "detail": {
+                "title": "Payments"
+            },
+            "amount": "Amount",
+            "name": "Name",
+            "date": "Date",
+            "group_id": "Group Id",
+            "payer_id": "Payer Id",
+            "transfers": "Transfers"
+        }
+    }
+}

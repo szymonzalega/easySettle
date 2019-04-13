@@ -1,5 +1,8 @@
 package com.easysettle.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -12,6 +15,9 @@ import java.util.Objects;
 /**
  * A Members.
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "members")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)

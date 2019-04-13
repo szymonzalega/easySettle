@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="easySettleApp.transfers.home.title">Transfers</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="transfers.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="easySettleApp.transfers.home.createLabel">
+                        Create new Transfers
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="easySettleApp.transfers.amount">Amount</span></th>
+                    <th><span data-translate="easySettleApp.transfers.payer">Payer</span></th>
+                    <th><span data-translate="easySettleApp.transfers.loaner">Loaner</span></th>
+                    <th><span data-translate="easySettleApp.transfers.payments">Payments</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="transfers in vm.transfers track by transfers.id">
+                    <td><a ui-sref="transfers-detail({id:transfers.id})">{{transfers.id}}</a></td>
+                    <td>{{transfers.amount}}</td>
+                    <td>
+                        <a ui-sref="members-detail({id:transfers.payer.id})">{{transfers.payer.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="members-detail({id:transfers.loaner.id})">{{transfers.loaner.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="payments-detail({id:transfers.payments.id})">{{transfers.payments.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="transfers-detail({id:transfers.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transfers.edit({id:transfers.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transfers.delete({id:transfers.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

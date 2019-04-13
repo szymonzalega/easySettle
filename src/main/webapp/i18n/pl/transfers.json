@@ -1,0 +1,25 @@
+
+{
+    "easySettleApp": {
+        "transfers" : {
+            "home": {
+                "title": "Transfers",
+                "createLabel": "Dodaj Transfers",
+                "createOrEditLabel": "Dodaj lub edytuj: Transfers"
+            },
+            "created": "Utworzono nowy Transfers z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Transfers z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Transfers z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Transfers {{ id }}?"
+            },
+            "detail": {
+                "title": "Transfers"
+            },
+            "amount": "Amount",
+            "payer": "Payer",
+            "loaner": "Loaner",
+            "payments": "Payments"
+        }
+    }
+}

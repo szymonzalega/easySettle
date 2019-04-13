@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="easySettleApp.transfers.detail.title">Transfers</span> {{vm.transfers.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="easySettleApp.transfers.amount">Amount</span></dt>
+        <dd>
+            <span>{{vm.transfers.amount}}</span>
+        </dd>
+        <dt><span data-translate="easySettleApp.transfers.payer">Payer</span></dt>
+        <dd>
+            <a ui-sref="members-detail({id:vm.transfers.payer.id})">{{vm.transfers.payer.id}}</a>
+        </dd>
+        <dt><span data-translate="easySettleApp.transfers.loaner">Loaner</span></dt>
+        <dd>
+            <a ui-sref="members-detail({id:vm.transfers.loaner.id})">{{vm.transfers.loaner.id}}</a>
+        </dd>
+        <dt><span data-translate="easySettleApp.transfers.payments">Payments</span></dt>
+        <dd>
+            <a ui-sref="payments-detail({id:vm.transfers.payments.id})">{{vm.transfers.payments.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="transfers-detail.edit({id:vm.transfers.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

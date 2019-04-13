@@ -43,6 +43,7 @@ public class CacheConfiguration {
             cm.createCache(com.easysettle.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.easysettle.domain.Groups.class.getName(), jcacheConfiguration);
             cm.createCache(com.easysettle.domain.Members.class.getName(), jcacheConfiguration);
+            cm.createCache(com.easysettle.domain.Transfers.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

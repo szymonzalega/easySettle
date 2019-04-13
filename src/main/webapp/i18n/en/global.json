@@ -9,6 +9,7 @@
                 "main": "Entities",
                 "groups": "Groups",
                 "members": "Members",
+                "transfers": "Transfers",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,22 @@
+
+{
+    "easySettleApp": {
+        "groups" : {
+            "home": {
+                "title": "Groups",
+                "createLabel": "Dodaj Groups",
+                "createOrEditLabel": "Dodaj lub edytuj: Groups"
+            },
+            "created": "Utworzono nowy Groups z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Groups z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Groups z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Groups {{ id }}?"
+            },
+            "detail": {
+                "title": "Groups"
+            },
+            "name": "Name"
+        }
+    }
+}

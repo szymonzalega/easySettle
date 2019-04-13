@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="easySettleApp.members.detail.title">Members</span> {{vm.members.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="easySettleApp.members.name">Name</span></dt>
+        <dd>
+            <span>{{vm.members.name}}</span>
+        </dd>
+        <dt><span data-translate="easySettleApp.members.balance">Balance</span></dt>
+        <dd>
+            <span>{{vm.members.balance}}</span>
+        </dd>
+        <dt><span data-translate="easySettleApp.members.groups">Groups</span></dt>
+        <dd>
+            <a ui-sref="groups-detail({id:vm.members.groups.id})">{{vm.members.groups.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="members-detail.edit({id:vm.members.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

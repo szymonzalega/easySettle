@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "groups",
+            "otherEntityName": "groups",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "balance",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20190413091514",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "members",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

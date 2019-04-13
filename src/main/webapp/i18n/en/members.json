@@ -1,0 +1,24 @@
+
+{
+    "easySettleApp": {
+        "members" : {
+            "home": {
+                "title": "Members",
+                "createLabel": "Create a new Members",
+                "createOrEditLabel": "Create or edit a Members"
+            },
+            "created": "A new Members is created with identifier {{ param }}",
+            "updated": "A Members is updated with identifier {{ param }}",
+            "deleted": "A Members is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Members {{ id }}?"
+            },
+            "detail": {
+                "title": "Members"
+            },
+            "name": "Name",
+            "balance": "Balance",
+            "groups": "Groups"
+        }
+    }
+}

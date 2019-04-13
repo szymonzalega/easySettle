@@ -1,12 +1,56 @@
 package com.easysettle.service;
 
+import com.easysettle.domain.Members;
+import com.easysettle.domain.Payments;
 import com.easysettle.domain.Transfers;
+import com.easysettle.repository.TransfersRepository;
+import com.easysettle.service.dto.NewPaymentRequest;
+import org.decimal4j.util.DoubleRounder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
- * Service Interface for managing Transfers.
+ * Service Implementation for managing Transfers.
  */
-public interface TransfersService {
+@Service
+@Transactional
+public class TransfersService {
+
+    private final Logger log = LoggerFactory.getLogger(TransfersService.class);
+
+    private final TransfersRepository transfersRepository;
+
+    public TransfersService(TransfersRepository transfersRepository) {
+        this.transfersRepository = transfersRepository;
+    }
+
+    public void saveTransfers(Payments payments, NewPaymentRequest newPaymentRequest){
+
+        Integer loanersAmount = newPaymentRequest.getLoanersList().size();
+        Double amountPerMember = DoubleRounder.round(newPaymentRequest.getAmount() / loanersAmount, 2);
+
+        Members payer = new Members();
+        payer.setId(newPaymentRequest.getPayer_id());
+
+        for (Long memberId : newPaymentRequest.getLoanersList()){
+
+            Members loaner = new Members();
+            loaner.setId(memberId);
+
+            Transfers transfers = Transfers.builder()
+                .payments(payments)
+                .amount(amountPerMember)
+                .payer(payer)
+                .loaner(loaner)
+                .build();
+
+            Transfers result = transfersRepository.save(transfers);
+        }
+    }
 
     /**
      * Save a transfers.
@@ -14,27 +58,41 @@ public interface TransfersService {
      * @param transfers the entity to save
      * @return the persisted entity
      */
-    Transfers save(Transfers transfers);
+    public Transfers save(Transfers transfers) {
+        log.debug("Request to save Transfers : {}", transfers);
+        return transfersRepository.save(transfers);
+    }
 
     /**
      * Get all the transfers.
      *
      * @return the list of entities
      */
-    List<Transfers> findAll();
+    @Transactional(readOnly = true)
+    public List<Transfers> findAll() {
+        log.debug("Request to get all Transfers");
+        return transfersRepository.findAll();
+    }
 
     /**
-     * Get the "id" transfers.
+     * Get one transfers by id.
      *
      * @param id the id of the entity
      * @return the entity
      */
-    Transfers findOne(Long id);
+    @Transactional(readOnly = true)
+    public Transfers findOne(Long id) {
+        log.debug("Request to get Transfers : {}", id);
+        return transfersRepository.findOne(id);
+    }
 
     /**
-     * Delete the "id" transfers.
+     * Delete the transfers by id.
      *
      * @param id the id of the entity
      */
-    void delete(Long id);
+    public void delete(Long id) {
+        log.debug("Request to delete Transfers : {}", id);
+        transfersRepository.delete(id);
+    }
 }

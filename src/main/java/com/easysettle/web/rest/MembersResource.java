@@ -3,6 +3,7 @@ package com.easysettle.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.easysettle.domain.Members;
 import com.easysettle.service.MembersService;
+import com.easysettle.service.dto.SettleDebtResult;
 import com.easysettle.web.rest.errors.BadRequestAlertException;
 import com.easysettle.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -115,5 +116,11 @@ public class MembersResource {
         log.debug("REST request to delete Members : {}", id);
         membersService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
+    }
+
+    @GetMapping("/members/settleDebt")
+    public List<SettleDebtResult> settleDebt() {
+        List<SettleDebtResult> settleDebtResultList = membersService.settleDebts();
+        return settleDebtResultList;
     }
 }

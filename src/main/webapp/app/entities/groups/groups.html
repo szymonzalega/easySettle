@@ -1,7 +1,5 @@
 <div>
-<pre>{{vm.groups | json}}</pre>
-
-    <div class="group-block" ng-repeat="group in vm.groups">
+    <div class="group-block" ng-repeat="group in vm.groups" ng-click="vm.goToGroupContext(group.id)">
         <span>{{group.name}}</span>
         <div class="btn-group flex-btn-group-container">
             <button type="submit"

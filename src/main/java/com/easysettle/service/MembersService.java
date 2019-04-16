@@ -83,6 +83,11 @@ public class MembersService {
         return settleDebtResultList;
     }
 
+    public List<Members> getMembersByGroup(Long groupId){
+        List<Members> membersList = membersRepository.findMembersByGroups_Id(groupId);
+        return membersList;
+    }
+
     private SettleDebtResult getTransactionsObject(Members paymentFrom, Members paymentTo, Double amount){
         if(amount < 0){
             amount *= -1;

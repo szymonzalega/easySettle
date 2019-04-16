@@ -139,4 +139,10 @@ public class MembersResource {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
         }
     }
+
+    @GetMapping("/members/getMembersByGroup/{groupId}")
+    public List<Members> getMembersByGroup(@PathVariable Long groupId) {
+        List<Members> membersList = membersService.getMembersByGroup(groupId);
+        return membersList;
+    }
 }

@@ -18,6 +18,9 @@ angular.module('easySettleApp').factory('MembersService',
                     },
                     "remove": {
                         method: 'DELETE', isArray: false, url: 'api/members/:id'
+                    },
+                    "getMembersByGroup": {
+                        method: 'GET', isArray: true, url: 'api/members/getMembersByGroup/:groupId'
                     }
                 });
 
@@ -36,6 +39,9 @@ angular.module('easySettleApp').factory('MembersService',
                 },
                 remove: function (id) {
                     return membersEvents.remove({id: id});
+                },
+                getMembersByGroup: function (groupId) {
+                    return membersEvents.getMembersByGroup({groupId: groupId});
                 }
             };
         }

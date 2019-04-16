@@ -22,8 +22,12 @@
             })
         }
 
+        vm.goToGroupContext = function(id){
+            $state.go('groups.balance', {id: id})
+        };
+
         vm.goToEdit = function(data){
-            $state.go('groups.edit', {group: data});
-        }
+            $state.go('groups.edit', {group: data, id: data.id});
+        };
     }
 })();

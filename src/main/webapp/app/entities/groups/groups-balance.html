@@ -1,0 +1,17 @@
+<div>
+    <div ng-repeat="member in vm.members">
+        <div class="row">
+            <div class="col-md-4 col-lg-4">
+                <span>{{member.name}}</span>
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <span>{{member.balance}}</span>
+            </div>
+        </div>
+    </div>
+    <span ng-click="vm.goToAddNewPayment()">asdasdsa</span>
+    <button class="btn btn-primary" ng-click="vm.goToAddNewPayment()">
+        <span class="glyphicon glyphicon-plus"></span>
+        <span>Dodaj nowa platnosc</span>
+    </button>
+</div>

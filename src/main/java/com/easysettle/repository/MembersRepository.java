@@ -24,4 +24,6 @@ public interface MembersRepository extends JpaRepository<Members, Long> {
 
     List<Members> findByBalanceGreaterThanOrderByBalanceDesc(Double zero);
 
+    List<Members> findMembersByGroups_Id(Long groupId);
+
 }

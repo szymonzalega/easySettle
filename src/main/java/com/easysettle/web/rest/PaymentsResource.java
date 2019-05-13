@@ -9,6 +9,7 @@ import com.easysettle.service.PaymentsService;
 import com.easysettle.service.TransfersService;
 import com.easysettle.service.dto.ActionResult;
 import com.easysettle.service.dto.NewPaymentRequest;
+import com.easysettle.service.dto.PaymentsAllInformation;
 import com.easysettle.web.rest.errors.BadRequestAlertException;
 import com.easysettle.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -63,10 +64,11 @@ public class PaymentsResource {
         }
     }
 
-    @GetMapping("/payments/getAllPayments")
-    public List<Payments> getAllPayments(@Valid @PathVariable Long groupId) {
+    @GetMapping("/payments/getAllPayments/{groupId}")
+    public List<PaymentsAllInformation> getAllPayments(@Valid @PathVariable Long groupId) {
         log.debug("GET all payments");
-        List<Payments> paymentsList = paymentsService.getAllPayments(groupId);
+        List<PaymentsAllInformation> paymentsList = paymentsService.getAllPayments(groupId);
+
         return paymentsList;
     }
 

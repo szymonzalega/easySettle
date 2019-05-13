@@ -24,7 +24,7 @@
         };
 
         vm.goToTransactionsList = function(){
-            $state.go('payments', {id: $stateParams.id});
+            $state.go('payments', {id: parseInt($stateParams.id)});
         };
 
     }

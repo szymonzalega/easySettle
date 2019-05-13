@@ -1,14 +1,20 @@
 package com.easysettle.service;
 
+import com.easysettle.domain.Members;
 import com.easysettle.domain.Payments;
+import com.easysettle.domain.Transfers;
+import com.easysettle.repository.MembersRepository;
 import com.easysettle.repository.PaymentsRepository;
 import com.easysettle.service.dto.NewPaymentRequest;
+import com.easysettle.service.dto.PaymentsAllInformation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Service Implementation for managing Payments.
@@ -21,8 +27,11 @@ public class PaymentsService {
 
     private final PaymentsRepository paymentsRepository;
 
-    public PaymentsService(PaymentsRepository paymentsRepository) {
+    private final MembersRepository membersRepository;
+
+    public PaymentsService(PaymentsRepository paymentsRepository, MembersRepository membersRepository) {
         this.paymentsRepository = paymentsRepository;
+        this.membersRepository = membersRepository;
     }
 
     public Payments newPayment(NewPaymentRequest newPaymentRequest){
@@ -30,7 +39,7 @@ public class PaymentsService {
         Payments payments = Payments.builder()
             .amount(newPaymentRequest.getAmount())
             .date(newPaymentRequest.getDate())
-            .group_id(newPaymentRequest.getGroup_id())
+            .groupId(newPaymentRequest.getGroup_id())
             .payer_id(newPaymentRequest.getPayer_id())
             .name(newPaymentRequest.getName())
             .build();
@@ -40,9 +49,33 @@ public class PaymentsService {
         return result;
     }
 
-    public List<Payments> getAllPayments(Long groupId){
-        List<Payments> paymentsList = paymentsRepository.findAllByGroup_id(groupId);
-        return paymentsList;
+    public List<PaymentsAllInformation> getAllPayments(Long groupId){
+
+        List<PaymentsAllInformation> allPaymentsList = new ArrayList<>();
+
+        List<Payments> paymentsList = paymentsRepository.findPaymentsByGroupId(groupId);
+        for (Payments payment : paymentsList){
+            Members member = membersRepository.findMembersById(payment.getPayer_id());
+
+            PaymentsAllInformation paymentsAllInformation = PaymentsAllInformation.builder()
+                .amount(payment.getAmount())
+                .name(payment.getName())
+                .date(payment.getDate())
+                .payerName(member.getName())
+                .loanersNameList(createLoanersNameList(payment.getTransfers()))
+                .build();
+
+            allPaymentsList.add(paymentsAllInformation);
+        }
+        return allPaymentsList;
+    }
+
+    private List<String> createLoanersNameList(Set<Transfers> loanersIdList){
+        List<String> loanersList = new ArrayList<>();
+        for(Transfers transfer : loanersIdList){
+            loanersList.add(transfer.getLoaner().getName());
+        }
+        return loanersList;
     }
 
 

@@ -47,7 +47,7 @@ public class Payments implements Serializable {
 
     @NotNull
     @Column(name = "group_id", nullable = false)
-    private Long group_id;
+    private Long groupId;
 
     @NotNull
     @Column(name = "payer_id", nullable = false)
@@ -106,16 +106,16 @@ public class Payments implements Serializable {
     }
 
     public Long getGroup_id() {
-        return group_id;
+        return groupId;
     }
 
-    public Payments group_id(Long group_id) {
-        this.group_id = group_id;
+    public Payments groupId(Long groupId) {
+        this.groupId = groupId;
         return this;
     }
 
-    public void setGroup_id(Long group_id) {
-        this.group_id = group_id;
+    public void setGroup_id(Long groupId) {
+        this.groupId = groupId;
     }
 
     public Long getPayer_id() {
@@ -184,7 +184,7 @@ public class Payments implements Serializable {
             ", amount=" + amount +
             ", name='" + name + '\'' +
             ", date=" + date +
-            ", group_id=" + group_id +
+            ", groupId=" + groupId +
             ", payer_id=" + payer_id +
             ", transfers=" + transfers +
             '}';

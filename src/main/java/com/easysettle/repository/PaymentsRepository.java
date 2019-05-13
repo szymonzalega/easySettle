@@ -15,6 +15,6 @@ import java.util.List;
 @Repository
 public interface PaymentsRepository extends JpaRepository<Payments, Long> {
 
-    List<Payments> findPaymentsByName (Long groupId);
+    List<Payments> findPaymentsByGroupId (Long groupId);
 
 }

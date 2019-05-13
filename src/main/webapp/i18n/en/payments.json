@@ -19,8 +19,8 @@
             "amount": "Amount",
             "name": "Name",
             "date": "Date",
-            "group_id": "Group Id",
-            "payer_id": "Payer Id",
+            "payerName": "Payer",
+            "loanersName": "Loaners",
             "transfers": "Transfers"
         }
     }

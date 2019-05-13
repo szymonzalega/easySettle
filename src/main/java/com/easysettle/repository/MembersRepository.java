@@ -26,4 +26,6 @@ public interface MembersRepository extends JpaRepository<Members, Long> {
 
     List<Members> findMembersByGroups_Id(Long groupId);
 
+    Members findMembersById(Long id);
+
 }

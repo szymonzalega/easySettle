@@ -5,47 +5,45 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="easySettleApp.payments.amount">Amount</span></th>
-                    <th><span data-translate="easySettleApp.payments.name">Name</span></th>
-                    <th><span data-translate="easySettleApp.payments.date">Date</span></th>
-                    <th><span data-translate="easySettleApp.payments.group_id">Group Id</span></th>
-                    <th><span data-translate="easySettleApp.payments.payer_id">Payer Id</span></th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th><span data-translate="global.field.id">Name</span></th>
+                <th><span data-translate="easySettleApp.payments.amount">Amount</span></th>
+                <th><span data-translate="easySettleApp.payments.date">Date</span></th>
+                <th><span data-translate="easySettleApp.payments.payerName">Payer</span></th>
+                <th><span data-translate="easySettleApp.payments.loanersName">Loaners</span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="payments in vm.payments track by payments.id">
-                    <td><a ui-sref="payments-detail({id:payments.id})">{{payments.id}}</a></td>
-                    <td>{{payments.amount}}</td>
-                    <td>{{payments.name}}</td>
-                        <td>{{payments.date | date:'mediumDate'}}</td>
-                    <td>{{payments.group_id}}</td>
-                    <td>{{payments.payer_id}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="payments-detail({id:payments.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="payments.edit({id:payments.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="payments.delete({id:payments.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="payments in vm.payments">
+                <td>{{payments.name}}</td>
+                <td>{{payments.amount}}</td>
+                <td>{{payments.date | date:'mediumDate'}}</td>
+                <td>{{payments.payerName}}</td>
+                <td>{{payments.loanersName}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="payments-detail({id:payments.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="payments.edit({id:payments.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="payments.delete({id:payments.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

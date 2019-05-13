@@ -5,7 +5,7 @@ angular.module('easySettleApp').factory('PaymentsService',
                 {},
                 {
                     "getAllPayments": {
-                        method: 'GET', isArray: true, url: 'api/payments/getAllPayments'
+                        method: 'GET', isArray: true, url: 'api/payments/getAllPayments/:id'
                     },
                     "create": {
                         method: 'POST', isArray: false, url: 'api/payments/newPayment'
@@ -13,8 +13,8 @@ angular.module('easySettleApp').factory('PaymentsService',
                 });
 
             return {
-                getAllPayments: function () {
-                    return paymentsEvents.getAllPayments();
+                getAllPayments: function (id) {
+                    return paymentsEvents.getAllPayments({id: id});
                 },
                 create: function (payment) {
                     return paymentsEvents.create(payment);

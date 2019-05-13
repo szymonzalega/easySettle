@@ -5,18 +5,19 @@
         .module('easySettleApp')
         .controller('GroupsBalanceAddController', GroupsBalanceAddController);
 
-    GroupsBalanceAddController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'GroupsService', 'MembersService'];
+    GroupsBalanceAddController.$inject = ['$scope', '$rootScope', '$stateParams', 'PaymentsService'];
 
-    function GroupsBalanceAddController($scope, $rootScope, $stateParams, previousState, GroupsService, MembersService) {
+    function GroupsBalanceAddController($scope, $rootScope, $stateParams, PaymentsService) {
         var vm = this;
 
         vm.newPayment = {};
         vm.newPayment.loanersList = [];
         vm.members = [];
         vm.members = $stateParams.members;
+        vm.groupId = $stateParams.id;
 
-        vm.selectPayer = function(payerId){
-            vm.newPayment.payerId = payerId;
+        vm.selectPayer = function(payer_id){
+            vm.newPayment.payer_id = payer_id;
         };
 
         vm.selectLoaner = function (loanerId) {
@@ -31,6 +32,12 @@
         vm.checkLoanerIsSelected = function (loanerId) {
             return vm.newPayment.loanersList.indexOf(loanerId);
 
+        };
+
+        vm.savePayment = function () {
+            vm.newPayment.date = new Date();
+            vm.newPayment.group_id = parseInt(vm.groupId);
+            PaymentsService.create(vm.newPayment);
         }
     }
 })();

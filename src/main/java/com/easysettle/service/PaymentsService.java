@@ -40,6 +40,11 @@ public class PaymentsService {
         return result;
     }
 
+    public List<Payments> getAllPayments(Long groupId){
+        List<Payments> paymentsList = paymentsRepository.findAllByGroup_id(groupId);
+        return paymentsList;
+    }
+
 
     /**
      * Save a payments.

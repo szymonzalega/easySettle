@@ -57,10 +57,17 @@ public class PaymentsResource {
             membersService.changeMemberBalance(request);
             ActionResult result = ActionResult.builder().result(ActionResultStatus.SUCCESS.toString()).messageError(null).build();
             return ResponseEntity.ok(result);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             ActionResult result = ActionResult.builder().result(ActionResultStatus.ERROR.toString()).messageError("Error adding payments").build();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
         }
+    }
+
+    @GetMapping("/payments/getAllPayments")
+    public List<Payments> getAllPayments(@Valid @PathVariable Long groupId) {
+        log.debug("GET all payments");
+        List<Payments> paymentsList = paymentsService.getAllPayments(groupId);
+        return paymentsList;
     }
 
 
@@ -116,7 +123,7 @@ public class PaymentsResource {
     public List<Payments> getAllPayments() {
         log.debug("REST request to get all Payments");
         return paymentsService.findAll();
-        }
+    }
 
     /**
      * GET  /payments/:id : get the "id" payments.

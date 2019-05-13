@@ -5,21 +5,19 @@
         .module('easySettleApp')
         .controller('PaymentsController', PaymentsController);
 
-    PaymentsController.$inject = ['Payments'];
+    PaymentsController.$inject = ['PaymentsService'];
 
-    function PaymentsController(Payments) {
+    function PaymentsController(PaymentsService) {
 
         var vm = this;
 
         vm.payments = [];
 
-        loadAll();
-
-        function loadAll() {
-            Payments.query(function(result) {
-                vm.payments = result;
-                vm.searchQuery = null;
-            });
+        vm.getAllPayments = function () {
+            vm.paymentsPromise = PaymentsService.getAllPayments().$promise.then(function (data) {
+                vm.payments = data;
+            })
         }
+
     }
 })();

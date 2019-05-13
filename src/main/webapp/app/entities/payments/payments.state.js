@@ -11,7 +11,10 @@
         $stateProvider
         .state('payments', {
             parent: 'entity',
-            url: '/payments',
+            params: {
+                id: null
+            },
+            url: '/payments/{id}',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'easySettleApp.payments.home.title'

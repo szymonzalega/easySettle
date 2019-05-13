@@ -1,7 +1,12 @@
 <div>
+    Nazwa
+    <input type="text" ng-model="vm.newPayment.name">
+    Kwota
+    <input type="number" ng-model="vm.newPayment.amount">
+
     Kto zapłacił
     <div ng-repeat="member in vm.members" ng-click="vm.selectPayer(member.id)"
-         ng-style="{ 'background-color' : (vm.newPayment.payerId == member.id) ? '#d6d6d6' : '' }"
+         ng-style="{ 'background-color' : (vm.newPayment.payer_id == member.id) ? '#d6d6d6' : '' }"
          style="margin: 10px; padding: 10px; border: 1px solid #000000">
         <span>{{member.name}}</span>
     </div>
@@ -14,6 +19,8 @@
          style="margin: 10px; padding: 10px; border: 1px solid #000000">
         <span>{{member.name}}</span>
     </div>
+
+    <button class="button bg-primary" ng-click="vm.savePayment()">Zapisz</button>
 
 
 </div>

@@ -21,7 +21,11 @@
 
         vm.goToAddNewPayment = function(){
             $state.go('groups.balance.add', {members: vm.members, id: $stateParams.id});
-        }
+        };
+
+        vm.goToTransactionsList = function(){
+            $state.go('payments', {id: $stateParams.id});
+        };
 
     }
 })();

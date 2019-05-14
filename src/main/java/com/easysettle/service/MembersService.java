@@ -45,9 +45,9 @@ public class MembersService {
         }
     }
 
-    public List<SettleDebtResult> settleDebts(){
-        LinkedHashMap<Members, Double> positiveBalanceMap = getBalanceMap(true);
-        LinkedHashMap<Members, Double> negativeBalanceMap = getBalanceMap(false);
+    public List<SettleDebtResult> settleDebts(Long groupId){
+        LinkedHashMap<Members, Double> positiveBalanceMap = getBalanceMap(groupId, true);
+        LinkedHashMap<Members, Double> negativeBalanceMap = getBalanceMap(groupId, false);
         List<SettleDebtResult> settleDebtResultList = new ArrayList<>();
 
         while(positiveBalanceMap.size() != 0 && negativeBalanceMap.size() != 0){
@@ -101,14 +101,14 @@ public class MembersService {
         return settleDebtResult;
     }
 
-    private LinkedHashMap<Members, Double> getBalanceMap(boolean isPositive){
+    private LinkedHashMap<Members, Double> getBalanceMap(Long groupId, boolean isPositive){
 
         List<Members> membersList = new ArrayList<>();
 
         if(isPositive){
-            membersList = membersRepository.findByBalanceGreaterThanOrderByBalanceDesc(ZERO);
+            membersList = membersRepository.findByBalanceGreaterThanOrderByBalanceDesc(ZERO, groupId);
         } else {
-            membersList = membersRepository.findByBalanceLessThanOrderByBalanceAsc(ZERO);
+            membersList = membersRepository.findByBalanceLessThanOrderByBalanceAsc(ZERO, groupId);
         }
 
         LinkedHashMap<Members, Double> map = new LinkedHashMap<>();

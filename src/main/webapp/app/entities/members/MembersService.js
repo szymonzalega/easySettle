@@ -1,14 +1,14 @@
 angular.module('easySettleApp').factory('MembersService',
     ['$resource',
         function ($resource) {
-            var membersEvents = $resource('api/members/',
+            let membersEvents = $resource('api/members/',
                 {},
                 {
                     "get": {
                         method: 'GET', isArray: true
                     },
                     "saveMembers": {
-                        method: 'POST', isArray: true, url: 'api/members/saveMembers'
+                        method: 'POST', isArray: false, url: 'api/members/saveMembers'
                     },
                     "create": {
                         method: 'POST', isArray: false
@@ -21,6 +21,9 @@ angular.module('easySettleApp').factory('MembersService',
                     },
                     "getMembersByGroup": {
                         method: 'GET', isArray: true, url: 'api/members/getMembersByGroup/:groupId'
+                    },
+                    "settleDebt": {
+                        method: 'GET', isArray: true, url: 'api/members/settleDebt/:groupId'
                     }
                 });
 
@@ -42,6 +45,9 @@ angular.module('easySettleApp').factory('MembersService',
                 },
                 getMembersByGroup: function (groupId) {
                     return membersEvents.getMembersByGroup({groupId: groupId});
+                },
+                settleDebt: function (groupId) {
+                    return membersEvents.settleDebt({groupId: groupId})
                 }
             };
         }

@@ -20,5 +20,8 @@
             "balance": "Balance",
             "groups": "Groups"
         }
-    }
+    },
+    "easySettleApp.members.settlement.paymentFrom": "Payment from",
+    "easySettleApp.members.settlement.paymentTo": "Payment to",
+    "easySettleApp.members.settlement.amount": "Amount"
 }

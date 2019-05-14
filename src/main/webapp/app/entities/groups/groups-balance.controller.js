@@ -8,7 +8,9 @@
     GroupsBalanceController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'GroupsService', 'MembersService', '$state'];
 
     function GroupsBalanceController($scope, $rootScope, $stateParams, previousState, GroupsService, MembersService, $state) {
-        var vm = this;
+        let vm = this;
+        
+        let groupId = parseInt($stateParams.id);
 
         // vm.previousState = previousState.name;
 
@@ -17,14 +19,18 @@
                 vm.members = data;
             })
         };
-        vm.getMembersByGroup($stateParams.id);
+        vm.getMembersByGroup(groupId);
 
         vm.goToAddNewPayment = function(){
-            $state.go('groups.balance.add', {members: vm.members, id: $stateParams.id});
+            $state.go('groups.balance.add', {members: vm.members, id: groupId});
         };
 
         vm.goToTransactionsList = function(){
-            $state.go('payments', {id: parseInt($stateParams.id)});
+            $state.go('payments', {id: groupId});
+        };
+
+        vm.goToSettlement = function(){
+            $state.go('settlement', {id: groupId});
         };
 
     }

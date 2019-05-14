@@ -121,9 +121,9 @@ public class MembersResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
-    @GetMapping("/members/settleDebt")
-    public List<SettleDebtResult> settleDebt() {
-        List<SettleDebtResult> settleDebtResultList = membersService.settleDebts();
+    @GetMapping("/members/settleDebt/{groupId}")
+    public List<SettleDebtResult> settleDebt(@Valid @PathVariable Long groupId) {
+        List<SettleDebtResult> settleDebtResultList = membersService.settleDebts(groupId);
         return settleDebtResultList;
     }
 

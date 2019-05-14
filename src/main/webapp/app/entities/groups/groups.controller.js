@@ -9,17 +9,32 @@
 
     function GroupsController(GroupsService, $state) {
 
-        var vm = this;
+        let vm = this;
 
         vm.groups = [];
 
-        getAllGroups();
-
-        function getAllGroups() {
-            vm.groups = GroupsService.get().$promise.then(function (data) {
+        function getAllGroupsWithMembers() {
+            vm.groupsPromise = GroupsService.getGroupsWithMembers().$promise.then(function (data) {
                 vm.groups = data;
-                console.log(data);
+                angular.forEach(vm.groups, function (group) {
+                    group.firstLetter = getFirstLetter(group.name);
+                    group.membersName = "";
+                    angular.forEach(group.members, function (member, index) {
+                        if (index === group.members.length - 1) {
+                            group.membersName += member.name;
+                        } else {
+                            group.membersName += `${member.name}, `;
+                        }
+                    })
+                })
             })
+        }
+
+        getAllGroupsWithMembers();
+
+        function getFirstLetter(word) {
+            let arr = word.split('');
+            return arr[0].toUpperCase();
         }
 
         vm.goToGroupContext = function(id){

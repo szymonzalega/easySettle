@@ -1,7 +1,14 @@
-<div>
-    <div class="group-block" ng-repeat="group in vm.groups" ng-click="vm.goToGroupContext(group.id)">
-        <span>{{group.name}}</span>
-        <div class="btn-group flex-btn-group-container">
+<div class="groups-center-box">
+    <div class="group-element" ng-repeat="group in vm.groups" ng-click="vm.goToGroupContext(group.id)">
+        <div class="group-name">
+            <span class="circle">{{group.firstLetter}}</span>
+            <span>{{group.name}}</span>
+            <div class="remove-button">-</div>
+        </div>
+        <div class="group-members-box">
+            <span>{{group.membersName}}</span>
+        </div>
+        <!--<div class="btn-group flex-btn-group-container">
             <button type="submit"
                     ui-sref="groups-detail({id:group.id})"
                     class="btn btn-info btn-sm">
@@ -17,59 +24,6 @@
                     class="btn btn-danger btn-sm">
                 <span class="glyphicon glyphicon-remove-circle"></span>
             </button>
-        </div>
-    </div>
-</div>
-<div>
-    <h2 data-translate="easySettleApp.groups.home.title">Groups</h2>
-    <jhi-alert></jhi-alert>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="groups.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="easySettleApp.groups.home.createLabel">
-                        Create new Groups
-                    </span>
-                </button>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="easySettleApp.groups.name">Name</span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="groups in vm.groups track by groups.id">
-                    <td><a ui-sref="groups-detail({id:groups.id})">{{groups.id}}</a></td>
-                    <td>{{groups.name}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="groups-detail({id:groups.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="groups.edit({id:groups.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="groups.delete({id:groups.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        </div>-->
     </div>
 </div>

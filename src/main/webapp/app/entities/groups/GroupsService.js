@@ -15,6 +15,9 @@ angular.module('easySettleApp').factory('GroupsService',
                     },
                     "remove": {
                         method: 'DELETE', isArray: false, url: 'api/groups/:id'
+                    },
+                    "getGroupsWithMembers": {
+                        method: 'GET', isArray: true, url: 'api/groups/getGroupsWithMembers'
                     }
                 });
 
@@ -30,6 +33,9 @@ angular.module('easySettleApp').factory('GroupsService',
                 },
                 remove: function (id) {
                     return groupsEvents.remove({id: id});
+                },
+                getGroupsWithMembers: function () {
+                    return groupsEvents.getGroupsWithMembers();
                 }
             };
         }

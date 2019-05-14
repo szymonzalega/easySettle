@@ -1,12 +1,17 @@
 package com.easysettle.service;
 
 import com.easysettle.domain.Groups;
+import com.easysettle.domain.Members;
 import com.easysettle.repository.GroupsRepository;
+import com.easysettle.repository.MembersRepository;
+import com.easysettle.service.dto.GroupsWithMembers;
+import com.easysettle.service.dto.PaymentsAllInformation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,8 +25,30 @@ public class GroupsService {
 
     private final GroupsRepository groupsRepository;
 
-    public GroupsService(GroupsRepository groupsRepository) {
+    private final MembersService membersService ;
+
+    public GroupsService(GroupsRepository groupsRepository, MembersService membersService) {
         this.groupsRepository = groupsRepository;
+        this.membersService = membersService;
+    }
+
+    public List<GroupsWithMembers> getGroupsWithMembers(){
+
+        List<GroupsWithMembers> groupsWithMembersList = new ArrayList<>();
+
+        List<Groups> groupsList = groupsRepository.findAll();
+        for (Groups group : groupsList){
+            List<Members> membersList = membersService.getMembersByGroup(group.getId());
+
+            GroupsWithMembers groupsWithMembers = GroupsWithMembers.builder()
+                .id(group.getId())
+                .name(group.getName())
+                .members(membersList)
+                .build();
+
+            groupsWithMembersList.add(groupsWithMembers);
+        }
+        return groupsWithMembersList;
     }
 
     /**

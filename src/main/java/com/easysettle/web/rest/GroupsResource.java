@@ -3,6 +3,7 @@ package com.easysettle.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.easysettle.domain.Groups;
 import com.easysettle.service.GroupsService;
+import com.easysettle.service.dto.GroupsWithMembers;
 import com.easysettle.web.rest.errors.BadRequestAlertException;
 import com.easysettle.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -33,6 +34,11 @@ public class GroupsResource {
 
     public GroupsResource(GroupsService groupsService) {
         this.groupsService = groupsService;
+    }
+
+    @GetMapping("/groups/getGroupsWithMembers")
+    public List<GroupsWithMembers> getGroupsWithMembers() {
+        return groupsService.getGroupsWithMembers();
     }
 
     /**

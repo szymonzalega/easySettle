@@ -1,0 +1,72 @@
+.groups-center-box {
+    margin: auto;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group-element {
+    width: 400px;
+    height: 125px;
+    padding: 10px 10px;
+    margin-top: 30px;
+    font-family: 'Roboto';
+    color: black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ffffff;
+    -webkit-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+}
+
+.group-element:hover {
+    transform: scale(1.03);
+}
+
+.group-name {
+    color: black;
+    font-weight: 100;
+    font-size: 42px;
+    display: flex;
+    flex-direction: row;
+}
+
+.group-members-box {
+    color: #979797;
+    font-size: 20px;
+    margin-top: 42px;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.circle {
+    font-size: 31px;
+    background-color: gold;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    margin-right: 7px;
+}
+
+.remove-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f15e5e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}

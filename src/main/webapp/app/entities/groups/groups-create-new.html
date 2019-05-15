@@ -1,15 +1,11 @@
 <div class="groups-center-box">
     <div class="groups-element-list">
-        <div class="input-section">
-            <label class="elem-input-label" for="field_name">Group name</label>
-            <input type="text" class="elem-input" id="field_name" placeholder="Group name" ng-model="vm.groups.name">
-        </div>
 
-        <div class="input-section">
-            <label class="elem-input-label" for="field_member_name">Member name</label>
-            <input type="text" class="elem-input" id="field_member_name" placeholder="Member name" ng-model="vm.groups.memberName">
-            <div class="elem-button-outline btn-small move-to-right margin-15-px" ng-click="vm.addMemberToGroup()">generate</div>
-        </div>
+        <easy-input name="'field_name'" input-model="vm.groups.name" label="'Group name'" placeholder="'Group name'"></easy-input>
+        <easy-input name="'field_member_name'" input-model="vm.groups.memberName" label="'Member name'" placeholder="'Member name'"></easy-input>
+        <div class="align-right elem-button-outline btn-small move-to-right margin-15-px" ng-click="vm.addMemberToGroup()">generate</div>
+
+        <pre>{{vm.groups}}</pre>
 
         <div class="group-element group-element-auto-high" ng-repeat="member in vm.memberList">
             <div class="member-name-small">

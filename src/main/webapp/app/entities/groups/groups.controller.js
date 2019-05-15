@@ -52,7 +52,7 @@
         };
 
         vm.goToAddNewGroup = function(){
-            $state.go('groups.new2');
-        }
+            $state.go('groups.new');
+        };
     }
 })();

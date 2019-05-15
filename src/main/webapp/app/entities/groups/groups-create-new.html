@@ -1,3 +1,30 @@
 <div class="groups-center-box">
-    {{vm.xx}}
+    <div class="groups-element-list">
+        <div class="input-section">
+            <label class="elem-input-label" for="field_name">Group name</label>
+            <input type="text" class="elem-input" id="field_name" placeholder="Group name" ng-model="vm.groups.name">
+        </div>
+
+        <div class="input-section">
+            <label class="elem-input-label" for="field_member_name">Member name</label>
+            <input type="text" class="elem-input" id="field_member_name" placeholder="Member name" ng-model="vm.groups.memberName">
+            <div class="elem-button-outline btn-small move-to-right margin-15-px" ng-click="vm.addMemberToGroup()">generate</div>
+        </div>
+
+        <div class="group-element group-element-auto-high" ng-repeat="member in vm.memberList">
+            <div class="member-name-small">
+                <circle-letter text="member.name" size="'small'"></circle-letter>
+                <span>{{member.name}}</span>
+                <span class="button-circle button-circle-red element-hover" ng-click="vm.removeMember($index)">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-element">
+        <div class="gradient-box">
+
+        </div>
+        <div class="add-button" ng-click="vm.goToAddNewGroup()">
+            <span class="glyphicon glyphicon-floppy-disk reset-glyphicon glyphicon-icon-size-cirlce-button"></span>
+        </div>
+    </div>
 </div>

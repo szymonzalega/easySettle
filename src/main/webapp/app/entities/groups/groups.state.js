@@ -149,7 +149,7 @@
                     });
                 }]
             })
-            .state('groups.new2', {
+            .state('groups.new', {
                 parent: 'groups',
                 url: '/new2',
                 data: {
@@ -169,34 +169,6 @@
                         return $translate.refresh();
                     }]
                 }
-            })
-            .state('groups.new', {
-                parent: 'groups',
-                url: '/new',
-                data: {
-                    authorities: ['ROLE_USER']
-                },
-                onEnter: ['$stateParams', '$state', '$uibModal', function ($stateParams, $state, $uibModal) {
-                    $uibModal.open({
-                        templateUrl: 'app/entities/groups/groups-dialog.html',
-                        controller: 'GroupsDialogController',
-                        controllerAs: 'vm',
-                        backdrop: 'static',
-                        size: 'lg',
-                        resolve: {
-                            entity: function () {
-                                return {
-                                    name: null,
-                                    id: null
-                                };
-                            }
-                        }
-                    }).result.then(function () {
-                        $state.go('groups', null, {reload: 'groups'});
-                    }, function () {
-                        $state.go('groups');
-                    });
-                }]
             })
             .state('groups.edit', {
                 parent: 'groups',

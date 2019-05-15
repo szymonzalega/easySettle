@@ -17,6 +17,14 @@
     display: none;
 }
 
+.element-hover {
+    transition: 0.3s;
+}
+
+.element-hover:hover{
+    transform: scale(1.03);
+}
+
 .group-element {
     width: 400px;
     height: 125px;
@@ -25,24 +33,36 @@
     font-family: 'Roboto';
     color: black;
     display: flex;
+    /*transition: 0.3s;*/
     flex-direction: column;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
     background-color: #ffffff;
     -webkit-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
     box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
 }
 
+.group-element-auto-high {
+    height: auto;
+}
+
 .group-element:hover {
-    transform: scale(1.03);
+    /*transform: scale(1.03);*/
 }
 
 .group-name {
     color: black;
     font-weight: 100;
     font-size: 42px;
+    display: flex;
+    flex-direction: row;
+}
+
+.member-name-small {
+    color: black;
+    font-weight: 100;
+    font-size: 26px;
     display: flex;
     flex-direction: row;
 }
@@ -55,19 +75,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.circle {
-    font-size: 31px;
-    background-color: gold;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 300;
-    margin-right: 7px;
 }
 
 .footer-element {
@@ -109,4 +116,92 @@
 
 .add-button:hover {
     transform: scale(1.08);
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.elem-input-label {
+    margin: 15px 0 5px 3px;
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 300;
+    color: #2d2d2d;
+}
+
+.elem-input {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Roboto';
+    padding: 0 10px;
+    font-weight: 300;
+    background-color: #ffffff;
+}
+
+.elem-input:focus {
+    border: 1px solid #979797;
+}
+
+.elem-button-outline {
+    color: #979797;
+    background-color: rgba(127, 255, 212, 0);
+    border: 2px solid #979797;
+    font-weight: 400;
+    transition: 0.3s;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Roboto';
+}
+
+.elem-button-outline:hover {
+    background-color: #f5f2f0;
+}
+
+
+.btn-small {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.margin-15-px {
+    margin-top: 15px;
+}
+
+.move-to-right {
+    align-self: flex-end;
+}
+
+.button-circle {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    margin-left: auto;
+}
+
+.button-circle-red {
+    background-color: #cb0d14;
+}
+
+.reset-glyphicon {
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+.glyphicon-icon-size-cirlce-button {
+    font-size: 25px;
 }

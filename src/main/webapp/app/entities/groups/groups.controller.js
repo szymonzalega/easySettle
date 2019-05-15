@@ -50,5 +50,9 @@
         vm.goToEdit = function(data){
             $state.go('groups.edit', {group: data, id: data.id});
         };
+
+        vm.goToAddNewGroup = function(){
+            $state.go('groups.new2');
+        }
     }
 })();

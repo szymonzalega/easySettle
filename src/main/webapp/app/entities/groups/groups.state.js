@@ -149,6 +149,27 @@
                     });
                 }]
             })
+            .state('groups.new2', {
+                parent: 'groups',
+                url: '/new2',
+                data: {
+                    authorities: ['ROLE_USER']
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/groups/groups-create-new.html',
+                        controller: 'CreateGroupController',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('groups');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
+                }
+            })
             .state('groups.new', {
                 parent: 'groups',
                 url: '/new',

@@ -15,8 +15,6 @@
            name: $stateParams.name
         };
 
-        // vm.previousState = previousState.name;
-
         vm.getMembersByGroup = function(groupId){
             vm.membersPromise = MembersService.getMembersByGroup(groupId).$promise.then(function (data) {
                 vm.members = data;
@@ -39,6 +37,10 @@
         vm.goToSettlement = function(){
             $state.go('settlement', {id: vm.group.id});
         };
+
+        vm.goToGroupSettings = function(){
+
+        }
 
     }
 })();

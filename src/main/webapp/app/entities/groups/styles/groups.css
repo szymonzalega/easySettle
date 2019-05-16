@@ -156,6 +156,36 @@
     cursor: pointer;
 }
 
+.add-button .add-button-xs {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    z-index: 40;
+}
+
+.hide-block-with-buttons {
+    width: 150px;
+    height: 110px;
+    bottom: 10px;
+    left: calc(50% - 75px);
+    display: none;
+    position: absolute;
+}
+
+.hide-block-with-buttons:hover .hide-block-with-buttons {
+    display: block;
+}
+
+.add-button-with-elements {
+    position: relative;
+}
+
+.add-button-with-elements:hover .hide-block-with-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 .add-button:hover {
     transform: scale(1.08);
 }

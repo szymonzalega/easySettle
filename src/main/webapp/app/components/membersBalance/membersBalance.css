@@ -1,0 +1,106 @@
+.member-balance-component {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.member-balance-component .border-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(50% + 5px);
+    height: 100%;
+    border-right: 10px solid #e5e5e5;
+}
+
+.member-balance-component .row-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-balance-component .sizing-elem {
+    width: 50%;
+    padding: 6px 10px;
+    margin-top: 15px;
+    font-family: 'Roboto';
+    color: black;
+    display: flex;
+    /* transition: 0.3s; */
+    flex-direction: column;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffffff;
+    -webkit-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+}
+
+.member-balance-component .info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-balance-component .name-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.member-balance-component .name {
+    font-size: 17px;
+}
+
+.member-balance-component .amount-section {
+
+}
+
+.member-balance-component .amount {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.member-balance-component .move-left {
+    margin-right: auto;
+    border-bottom: 4px solid #7fc27f;
+}
+
+.member-balance-component .move-right {
+    margin-left: auto;
+    border-bottom: 4px solid #f35c5c;
+}
+
+.member-balance-component .move-center {
+    margin-left: 25%;
+    border-bottom: 4px solid #cbcbcb;
+}
+
+.member-balance-component .move-left .amount {
+    color: #7fc27f;
+}
+
+.member-balance-component .move-right .amount {
+    color: #f35c5c;
+}
+
+.member-balance-component .move-left .info-section {
+    margin-right: auto;
+}
+
+.member-balance-component .move-right .info-section {
+    margin-left: auto;
+}
+
+.member-balance-component .move-left .name-section {
+    justify-content: flex-start;
+}
+
+.member-balance-component .move-right .name-section {
+    justify-content: flex-end;
+}

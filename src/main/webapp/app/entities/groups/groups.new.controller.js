@@ -32,7 +32,10 @@
             };
 
             GroupsService.create(group).$promise.then(function (result) {
-                let groupId = result.id;
+                let group = {
+                    id: result.id,
+                    name: result.name
+                };
 
                 angular.forEach(vm.memberList, function (item, index) {
                     item.balance = 0;
@@ -40,7 +43,7 @@
                 });
 
                 MembersService.saveMembers(vm.memberList).$promise.then(function (data) {
-                    $state.go('groups.balance', {id: groupId})
+                    $state.go('groups.balance', group);
                 }).catch(function (reason) {
                     console.error(reason)
                 })

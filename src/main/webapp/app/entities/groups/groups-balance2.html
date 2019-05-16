@@ -1,0 +1,19 @@
+<div class="groups-center-box">
+    <div class="groups-element-list">
+        <div class="group-name-outline-box" ng-click="vm.goToGroupContext(vm.group.id)">
+            <div class="group-name">
+                <circle-letter text="vm.group.name" size="'big'"></circle-letter>
+                <span>{{vm.group.name}}</span>
+            </div>
+        </div>
+        <members-balance members="vm.members"></members-balance>
+    </div>
+    <div class="footer-element">
+        <div class="gradient-box">
+
+        </div>
+        <div class="add-button" ng-click="vm.goToAddNewGroup()">
+            <span>+</span>
+        </div>
+    </div>
+</div>

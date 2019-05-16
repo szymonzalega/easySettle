@@ -43,8 +43,12 @@
             return word.charAt(0).toUpperCase() + word.slice(1);
         }
 
-        vm.goToGroupContext = function(id){
-            $state.go('groups.balance', {id: id})
+        vm.goToGroupContext = function(group){
+            let params = {
+              id: group.id,
+              name: group.name
+            };
+            $state.go('groups.balance2', params);
         };
 
         vm.goToEdit = function(data){

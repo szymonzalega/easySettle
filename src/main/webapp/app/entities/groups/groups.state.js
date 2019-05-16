@@ -92,6 +92,39 @@
                     }]
                 }
             })
+            .state('groups.balance2', {
+                parent: 'groups',
+                url: '/groups-balance2/{id}',
+                data: {
+                    authorities: ['ROLE_USER'],
+                    pageTitle: 'easySettleApp.groups.detail.title'
+                },
+                params: {
+                    id: null,
+                    name: null
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/entities/groups/groups-balance2.html',
+                        controller: 'GroupsBalanceController2',
+                        controllerAs: 'vm'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('groups');
+                        return $translate.refresh();
+                    }],
+                    previousState: ["$state", function ($state) {
+                        var currentStateData = {
+                            name: $state.current.name || 'groups',
+                            params: $state.params,
+                            url: $state.href($state.current.name, $state.params)
+                        };
+                        return currentStateData;
+                    }]
+                }
+            })
             .state('groups.balance.add', {
                 parent: 'groups',
                 url: '/groups-balance/{id}/add',
@@ -151,7 +184,7 @@
             })
             .state('groups.new', {
                 parent: 'groups',
-                url: '/new2',
+                url: '/new',
                 data: {
                     authorities: ['ROLE_USER']
                 },

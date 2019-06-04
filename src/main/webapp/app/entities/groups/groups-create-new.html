@@ -1,9 +1,18 @@
 <div class="groups-center-box">
     <div class="groups-element-list">
 
-        <easy-input name="'field_name'" input-model="vm.groups.name" label="'Group name'" placeholder="'Group name'"></easy-input>
-        <easy-input name="'field_member_name'" input-model="vm.groups.memberName" label="'Member name'" placeholder="'Member name'"></easy-input>
-        <div class="align-right elem-button-outline btn-small move-to-right margin-15-px" ng-click="vm.addMemberToGroup()">add</div>
+        <easy-input name="'field_name'" input-model="vm.groups.name"
+                    label="'easySettleApp.groups.create.groupName'"
+                    placeholder="'easySettleApp.groups.create.groupName'"></easy-input>
+
+        <easy-input name="'field_member_name'" input-model="vm.groups.memberName"
+                    label="'easySettleApp.groups.create.memberName'"
+                    placeholder="'easySettleApp.groups.create.memberName'"></easy-input>
+
+        <div class="align-right elem-button-outline btn-small move-to-right margin-15-px"
+             ng-click="vm.addMemberToGroup()">
+            {{'easySettleApp.groups.create.addButton' | translate}}</span>
+        </div>
 
         <div class="group-element group-element-auto-high" ng-repeat="member in vm.memberList">
             <div class="member-name-small">

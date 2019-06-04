@@ -1,4 +1,9 @@
 <div class="easy-input">
-    <label class="elem-input-label" for="{{name}}">{{label}}</label>
-    <input type="text" class="elem-input" id="{{name}}" placeholder="{{placeholder}}" ng-model="inputModel">
+    <label class="elem-input-label" for="{{name}}">{{label | translate}}</label>
+    <input type="text"
+           class="elem-input"
+           id="{{name}}"
+           placeholder="{{placeholder | translate}}"
+           ng-model="inputModel">
 </div>
+

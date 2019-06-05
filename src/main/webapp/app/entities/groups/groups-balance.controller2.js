@@ -31,7 +31,7 @@
         };
 
         vm.goToTransactionsList = function(){
-            $state.go('payments', {id: vm.group.id});
+            $state.go('payments', {id: vm.group.id, name: vm.group.name});
         };
 
         vm.goToSettlement = function(){

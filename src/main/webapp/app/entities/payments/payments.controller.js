@@ -10,7 +10,8 @@
     function PaymentsController(PaymentsService, $stateParams) {
 
         var vm = this;
-        vm.groupId = $stateParams.id;
+
+        vm.groupParams = $stateParams;
 
         vm.payments = [];
 
@@ -18,22 +19,19 @@
             var obj = {
                 id: parseInt(vm.groupId)
             };
-            vm.paymentsPromise = PaymentsService.getAllPayments(vm.groupId).$promise.then(function (data) {
+            vm.paymentsPromise = PaymentsService.getAllPayments(vm.groupParams.id).$promise.then(function (data) {
                 vm.payments = data;
-                angular.forEach(vm.payments, function (payment) {
-                    payment.loanersName = "";
-                    angular.forEach(payment.loanersNameList, function (name, index) {
-                        if (index === payment.loanersNameList.length - 1) {
-                            payment.loanersName += name;
-                        } else {
-                            payment.loanersName += `${name}, `;
-                        }
-                    })
-                });
-                console.log(vm.payments);
             })
         };
         vm.getAllPayments();
+
+        vm.goToPaymentDetails = function (payment) {
+
+        };
+
+        vm.removePayment = function(payment){
+
+        }
 
     }
 })();

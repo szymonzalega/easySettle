@@ -34,3 +34,7 @@
     width: 42px;
     height: 42px;
 }
+
+.grey-color {
+    background-color: #e5e5e5 !important;
+}

@@ -4,7 +4,8 @@ angular.module('easySettleApp')
             restrict: 'E',
             scope: {
                 text: '=',
-                size: '='
+                size: '=',
+                background: '='
             },
             templateUrl: 'app/components/circleLetterDirective/circleLetter.html',
             link: function (scope) {

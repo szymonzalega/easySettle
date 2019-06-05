@@ -12,7 +12,8 @@
         .state('payments', {
             parent: 'entity',
             params: {
-                id: null
+                id: null,
+                name: null
             },
             url: '/payments/{id}',
             data: {

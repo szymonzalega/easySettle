@@ -5,9 +5,9 @@
         .module('easySettleApp')
         .controller('PaymentsController', PaymentsController);
 
-    PaymentsController.$inject = ['$state', 'PaymentsService', '$stateParams'];
+    PaymentsController.$inject = ['$state', 'GroupsService', 'PaymentsService', '$stateParams'];
 
-    function PaymentsController($state, PaymentsService, $stateParams) {
+    function PaymentsController($state, GroupsService, PaymentsService, $stateParams) {
 
         var vm = this;
 
@@ -24,6 +24,21 @@
             })
         };
         vm.getAllPayments();
+
+        function downloadGroupDetails(id) {
+            vm.groupPromise = GroupsService.getOneGroup(id).$promise.then(function (data) {
+                vm.groupParams.name = data.name;
+            }).catch(function (error) {
+                console.log(error);
+            })
+        }
+
+        function getGroupDetails(groupInfo){
+            if(!groupInfo.name){
+                downloadGroupDetails(groupInfo.id);
+            }
+        }
+        getGroupDetails(vm.groupParams);
 
         vm.goToPaymentDetails = function (payment) {
 

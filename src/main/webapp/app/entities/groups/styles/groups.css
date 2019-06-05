@@ -256,3 +256,76 @@
 .glyphicon-icon-size-cirlce-button {
     font-size: 25px;
 }
+
+.settleDebt .group-element {
+    height: 100px !important;
+}
+
+.settle-debt-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.settle-debt-box .settle-row-top {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin-bottom: 16px;
+}
+
+.settle-debt-box .settle-row-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%
+}
+
+.settle-debt-box .settle-row-top .settle-column {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: center;
+}
+
+.settle-debt-box .settle-row-top .settle-column .amount {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.settle-debt-box .settle-row-bottom .settle-column {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+.settle-debt-box .circle-letter {
+    margin-right: 0 !important;
+}
+
+.settle-column .arr-line {
+    background-color: #cdcbcb;
+    width: 100%;
+    height: 2px;
+}
+.settle-column .arr-line-top {
+    background-color: #cdcbcb;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    right: -3px;
+    top: 0px;
+    transform: rotate(35deg);
+}
+.settle-column .arr-line-bottom {
+    background-color: #cdcbcb;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    right: -3px;
+    top: 14px;
+    transform: rotate(-35deg);
+}
+

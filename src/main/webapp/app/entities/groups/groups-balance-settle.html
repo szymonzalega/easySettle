@@ -1,0 +1,48 @@
+<div class="groups-center-box fadein">
+    <div class="groups-element-list">
+
+        <section-title upper="'Settled debts'" down="vm.groupParams.name"></section-title>
+
+        <div class="settleDebt" ng-repeat="settle in vm.settled">
+            <div class="group-element element-hover">
+
+                <div class="settle-debt-box">
+
+                    <div class="settle-row-top">
+                        <div class="settle-column">
+                            <circle-letter text="settle.paymentFrom.name" size="'big'"></circle-letter>
+                        </div>
+                        <div class="settle-column">
+                            <span class="amount">{{settle.amount}}PLN</span>
+                        </div>
+                        <div class="settle-column">
+                            <circle-letter text="settle.paymentTo.name" size="'big'"></circle-letter>
+                        </div>
+                    </div>
+                    <div class="settle-row-bottom">
+                        <div class="settle-column">
+                            <span>{{settle.paymentFrom.name}}</span>
+                        </div>
+                        <div class="settle-column">
+                            <div class="arr-line"></div>
+                            <div class="arr-line-top"></div>
+                            <div class="arr-line-bottom"></div>
+                        </div>
+                        <div class="settle-column">
+                            <span>{{settle.paymentTo.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-element">
+        <div class="gradient-box">
+
+        </div>
+        <div class="add-button" ng-click="vm.goToAddNewGroup()">
+            <span>+</span>
+        </div>
+    </div>
+</div>

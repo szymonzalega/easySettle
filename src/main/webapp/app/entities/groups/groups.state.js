@@ -96,20 +96,21 @@
                     }]
                 }
             })
-            .state('groups.balance.add', {
-                parent: 'groups',
-                url: '/groups-balance/{id}/add',
+            .state('groups.balance.settle', {
+                parent: 'groups.balance',
+                url: '/settle',
                 data: {
                     authorities: ['ROLE_USER'],
                     pageTitle: 'easySettleApp.groups.detail.title'
                 },
                 params: {
-                    members: null
+                    name: null,
+                    id: null
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/entities/groups/groups-balance-add.html',
-                        controller: 'GroupsBalanceAddController',
+                        templateUrl: 'app/entities/groups/groups-balance-settle.html',
+                        controller: 'GroupsBalanceSettleController',
                         controllerAs: 'vm'
                     }
                 },

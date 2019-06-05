@@ -1,26 +1,26 @@
-<div>
-    <div ng-repeat="member in vm.members">
-        <div class="row">
-            <div class="col-md-4 col-lg-4">
-                <span>{{member.name}}</span>
+<div class="groups-center-box">
+    <div class="groups-element-list">
+
+        <section-title upper="'Group balance'" down="vm.group.name"></section-title>
+        <members-balance members="vm.members"></members-balance>
+    </div>
+    <div class="footer-element">
+        <div class="gradient-box">
+
+        </div>
+        <div class="add-button add-button-with-elements" ng-click="vm.goToAddNewPayment()">
+            <div class="hide-block-with-buttons">
+                <div class="add-button add-button-xs" ng-click="vm.goToSettlement()">
+                    <span class="glyphicon glyphicon-usd"></span>
+                </div>
+                <div class="add-button add-button-xs" ng-click="vm.goToTransactionsList()">
+                    <span class="glyphicon glyphicon-list"></span>
+                </div>
+                <div class="add-button add-button-xs" ng-click="vm.goToGroupSettings()">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </div>
             </div>
-            <div class="col-md-8 col-lg-8">
-                <span>{{member.balance}}</span>
-            </div>
+            <span>+</span>
         </div>
     </div>
-    <button class="btn btn-primary" ng-click="vm.goToAddNewPayment()">
-        <span class="glyphicon glyphicon-plus"></span>
-        <span>Dodaj nowa platnosc</span>
-    </button>
-
-    <button class="btn btn-primary" ng-click="vm.goToTransactionsList()">
-        <span class="glyphicon glyphicon-plus"></span>
-        <span>Przejdz do platnosci</span>
-    </button>
-
-    <button class="btn btn-primary" ng-click="vm.goToSettlement()">
-        <span class="glyphicon glyphicon-plus"></span>
-        <span>Rozlicz!</span>
-    </button>
 </div>

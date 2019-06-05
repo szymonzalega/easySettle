@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="content/css/easySettle.css">
     <link rel="stylesheet" href="app/components/circleLetterDirective/circleLetter.css">
     <link rel="stylesheet" href="app/components/easyInput/easyInput.css">
+    <link rel="stylesheet" href="app/components/easyLabel/easyLabel.css">
     <link rel="stylesheet" href="app/components/sectionTitle/sectionTitle.css">
     <link rel="stylesheet" href="app/components/membersBalance/membersBalance.css">
     <link rel="stylesheet" href="content/css/reset.css">
@@ -84,6 +85,7 @@
     <script src="app/entities/payments/payments.state.js"></script>
     <script src="app/entities/payments/payments.service.js"></script>
     <script src="app/entities/payments/payments.controller.js"></script>
+    <script src="app/entities/payments/payments.new.controller.js"></script>
     <script src="app/entities/payments/PaymentsService.js"></script>
     <script src="app/entities/members/members-dialog.controller.js"></script>
     <script src="app/entities/members/members-detail.controller.js"></script>
@@ -102,7 +104,6 @@
     <script src="app/entities/groups/groups.controller.js"></script>
     <script src="app/entities/groups/groups.new.controller.js"></script>
     <script src="app/entities/groups/groups-balance.controller.js"></script>
-    <script src="app/entities/groups/groups-balance.controller2.js"></script>
     <script src="app/entities/groups/groups-balance-add.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
@@ -132,6 +133,7 @@
     <script src="app/components/alert/alert.directive.js"></script>
     <script src="app/components/circleLetterDirective/circleLetter.js"></script>
     <script src="app/components/easyInput/easyInput.js"></script>
+    <script src="app/components/easyLabel/easyLabel.js"></script>
     <script src="app/components/sectionTitle/sectionTitle.js"></script>
     <script src="app/components/membersBalance/membersBalance.js"></script>
     <script src="app/blocks/interceptor/notification.interceptor.js"></script>
@@ -194,7 +196,7 @@
 </head>
 <body ng-app="easySettleApp">
 
-<div ng-if="true" ui-view="navbar" ng-cloak></div>
+<div ng-if="false" ui-view="navbar" ng-cloak></div>
 
 <div class="container-app">
     <div ui-view="content">

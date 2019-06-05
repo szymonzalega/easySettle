@@ -309,3 +309,16 @@
 .glyphicon-icon-size-cirlce-button {
     font-size: 25px;
 }
+
+.payment-create-new .no-margin .group-element:first-child {
+    margin-top: 0;
+}
+
+.payment-create-new .selected-member .group-element {
+    background-color: #2c7be5;
+}
+
+.payment-create-new .selected-member .circle-letter {
+    background-color: white;
+    color: black;
+}

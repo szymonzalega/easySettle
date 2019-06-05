@@ -2,6 +2,12 @@
 {
     "easySettleApp": {
         "payments" : {
+            "create": {
+                "paymentName": "Payment name",
+                "paymentAmount": "Amount",
+                "payerName": "Who paid",
+                "loanerName": "For who"
+            },
             "home": {
                 "title": "Payments",
                 "createLabel": "Create a new Payments",

@@ -1,0 +1,24 @@
+.easy-label {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.easy-label .elem-input-label {
+    margin: 15px 0 5px 3px;
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 300;
+    color: #2d2d2d;
+}
+
+.easy-label .elem-input {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Roboto';
+    padding: 0 10px;
+    font-weight: 300;
+    background-color: #ffffff;
+}

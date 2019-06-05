@@ -9,29 +9,39 @@
 
     function GroupsBalanceController($scope, $rootScope, $stateParams, previousState, GroupsService, MembersService, $state) {
         let vm = this;
-        
-        let groupId = parseInt($stateParams.id);
 
-        // vm.previousState = previousState.name;
+        vm.group = {
+           id: parseInt($stateParams.id),
+           name: $stateParams.name
+        };
 
         vm.getMembersByGroup = function(groupId){
             vm.membersPromise = MembersService.getMembersByGroup(groupId).$promise.then(function (data) {
                 vm.members = data;
             })
         };
-        vm.getMembersByGroup(groupId);
+        vm.getMembersByGroup(vm.group.id);
+
+        let params = {
+            name: vm.group.name,
+            id: vm.group.id
+        };
 
         vm.goToAddNewPayment = function(){
-            $state.go('groups.balance.add', {members: vm.members, id: groupId});
+            $state.go('payments.new', params);
         };
 
         vm.goToTransactionsList = function(){
-            $state.go('payments', {id: groupId});
+            $state.go('payments', params);
         };
 
         vm.goToSettlement = function(){
-            $state.go('settlement', {id: groupId});
+            $state.go('settlement', {id: vm.group.id});
         };
+
+        vm.goToGroupSettings = function(){
+
+        }
 
     }
 })();

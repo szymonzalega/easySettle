@@ -48,7 +48,7 @@
               id: group.id,
               name: group.name
             };
-            $state.go('groups.balance2', params);
+            $state.go('groups.balance', params);
         };
 
         vm.goToEdit = function(data){

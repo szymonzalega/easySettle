@@ -5,9 +5,9 @@
         .module('easySettleApp')
         .controller('PaymentsController', PaymentsController);
 
-    PaymentsController.$inject = ['PaymentsService', '$stateParams'];
+    PaymentsController.$inject = ['$state', 'PaymentsService', '$stateParams'];
 
-    function PaymentsController(PaymentsService, $stateParams) {
+    function PaymentsController($state, PaymentsService, $stateParams) {
 
         var vm = this;
 
@@ -31,7 +31,11 @@
 
         vm.removePayment = function(payment){
 
-        }
+        };
+
+        vm.goToAddNewPayment = function(){
+            $state.go('payments.new', vm.groupParams);
+        };
 
     }
 })();

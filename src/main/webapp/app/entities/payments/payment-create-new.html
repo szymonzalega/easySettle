@@ -1,0 +1,64 @@
+<div class="groups-center-box fadein">
+    <div class="groups-element-list">
+
+        <section-title upper="'Create payment'" down="vm.groupParams.name"></section-title>
+
+
+        <easy-input name="'field_name'" input-model="vm.payment.name"
+                    label="'easySettleApp.payments.create.paymentName'"
+                    placeholder="'easySettleApp.payments.create.paymentName'"></easy-input>
+
+        <easy-input name="'field_member_name'" input-model="vm.payment.amount"
+                    label="'easySettleApp.payments.create.paymentAmount'"
+                    placeholder="'easySettleApp.payments.create.paymentAmount'"></easy-input>
+
+        <easy-label label="'easySettleApp.payments.create.payerName'"></easy-label>
+
+        <div class="payment-create-new" ng-if="!vm.payment.selectedPayer">
+            <div class="no-margin">
+                <div class="group-element group-element-auto-high" ng-repeat="member in vm.memberList"
+                     ng-click="vm.selectPayer(member)">
+                    <div class="member-name-small">
+                        <circle-letter text="member.name" size="'small'"></circle-letter>
+                        <span>{{member.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-create-new no-margin" ng-if="vm.payment.selectedPayer">
+            <div class="no-margin">
+                <div class="group-element group-element-auto-high" ng-click="vm.unSelectPayer()">
+                    <div class="member-name-small">
+                        <circle-letter text="vm.payment.selectedPayer.name" size="'small'"></circle-letter>
+                        <span>{{vm.payment.selectedPayer.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="vm.payment.selectedPayer">
+            <easy-label label="'easySettleApp.payments.create.loanerName'"></easy-label>
+
+            <div class="payment-create-new">
+                <div ng-repeat="member in vm.memberList" ng-class="{ 'selected-member': (member.selected), 'no-margin': ($index == 0) }">
+                    <div class="group-element group-element-auto-high"
+                         ng-click="vm.selectLoaner(member)">
+                        <div class="member-name-small">
+                            <circle-letter text="member.name" size="'small'"></circle-letter>
+                            <span>{{member.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-element">
+        <div class="gradient-box">
+
+        </div>
+        <div class="add-button" ng-click="vm.savePayment()">
+            <span class="glyphicon glyphicon-floppy-disk reset-glyphicon glyphicon-icon-size-cirlce-button"></span>
+        </div>
+    </div>
+</div>

@@ -1,11 +1,8 @@
 <div class="groups-center-box fadein">
     <div class="groups-element-list">
-        <div class="payment-name-outline-box" ng-click="vm.goToGroupContext(vm.group.id)">
-            <div class="payment-name-title">
-                <circle-letter text="vm.groupParams.name" size="'big'"></circle-letter>
-                <span>{{vm.groupParams.name}}</span>
-            </div>
-        </div>
+
+        <section-title upper="'Payments'" down="vm.groupParams.name"></section-title>
+
         <div class="payment-element element-hover" ng-repeat="payment in vm.payments" ng-click="vm.goToPaymentDetails(payment)">
 
             <div class="payment-info-box">

@@ -1,0 +1,31 @@
+.section-title-box {
+    width: 400px;
+    padding: 10px 10px;
+    margin-top: 30px;
+    font-family: 'Roboto';
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-box .text-label {
+    color: black;
+    font-weight: 100;
+    display: flex;
+    font-family: 'Roboto';
+    flex-direction: row;
+}
+
+.section-title-box .upper {
+    margin-bottom: 5px;
+    font-size: 42px;
+}
+
+.section-title-box .down {
+    font-size: 26px;
+}
+
+.section-title-box .down .vertical-center {
+    display: flex;
+    align-self: center;
+}

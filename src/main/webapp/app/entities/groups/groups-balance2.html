@@ -1,11 +1,7 @@
 <div class="groups-center-box">
     <div class="groups-element-list">
-        <div class="group-name-outline-box" ng-click="vm.goToGroupContext(vm.group.id)">
-            <div class="group-name">
-                <circle-letter text="vm.group.name" size="'big'"></circle-letter>
-                <span>{{vm.group.name}}</span>
-            </div>
-        </div>
+
+        <section-title upper="'Group balance'" down="vm.group.name"></section-title>
         <members-balance members="vm.members"></members-balance>
     </div>
     <div class="footer-element">

@@ -256,13 +256,3 @@
 .glyphicon-icon-size-cirlce-button {
     font-size: 25px;
 }
-
-.group-name-outline-box {
-    width: 400px;
-    padding: 10px 10px;
-    margin-top: 30px;
-    font-family: 'Roboto';
-    color: black;
-    display: flex;
-    flex-direction: column;
-}

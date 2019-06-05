@@ -2,6 +2,11 @@
 {
     "easySettleApp": {
         "groups" : {
+            "create": {
+                "groupName": "Group name",
+                "memberName": "Member name",
+                "addButton": "add"
+            },
             "home": {
                 "title": "Groups",
                 "createLabel": "Create a new Groups",

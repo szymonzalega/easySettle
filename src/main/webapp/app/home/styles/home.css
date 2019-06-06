@@ -1,0 +1,43 @@
+.home-login {
+    height: 45vh;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.home-login .app-title {
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 54px;
+    font-weight: 300;
+}
+
+.home-login .app-title .text-margin {
+    margin-top: 5px;
+}
+
+.home-login .app-title .gold {
+    font-weight: 500;
+    background-color: gold;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    margin: 0 10px 0 3px;
+}
+
+.home-login .button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.home-login .button-box {
+    display: flex;
+}
+
+.home-login .home-btn {
+    margin-right: 15px;
+}

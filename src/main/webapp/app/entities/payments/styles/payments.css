@@ -270,6 +270,17 @@
     background-color: #f5f2f0;
 }
 
+.primary-button {
+    color: #2c7be5;
+    border: 2px solid #2c7be5;
+}
+
+.btn-big {
+    width: 160px;
+    height: 60px;
+    font-size: 18px;
+    padding: 0 10px;
+}
 
 .btn-small {
     width: 100px;

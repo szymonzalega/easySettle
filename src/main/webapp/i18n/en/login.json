@@ -1,6 +1,9 @@
 {
     "login": {
         "title": "Sign in",
+        "nameLabel": "Name",
+        "passwordLabel": "Password",
+        "buttonLogin": "Login",
         "form": {
             "password": "Password",
             "password.placeholder": "Your password",

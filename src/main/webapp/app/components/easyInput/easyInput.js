@@ -6,10 +6,16 @@ angular.module('easySettleApp')
                 name: '=',
                 inputModel: '=',
                 label: '=',
-                placeholder: '='
+                placeholder: '=',
+                type: '=?'
             },
             templateUrl: 'app/components/easyInput/easyInput.html',
             link: function (scope) {
+
+                if(scope.type === null){
+                    scope.type = "text";
+                }
+
             }
         };
     });

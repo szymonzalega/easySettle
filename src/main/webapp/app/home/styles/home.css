@@ -25,6 +25,9 @@
     padding: 5px 10px;
     color: white;
     margin: 0 10px 0 3px;
+    -webkit-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
+    box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.41);
 }
 
 .home-login .button-row {
@@ -40,4 +43,21 @@
 
 .home-login .home-btn {
     margin-right: 15px;
+}
+
+.register-info {
+    display: flex;
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+.register-info .register-button {
+    color: #2c7be5;
+    cursor: pointer;
+}
+
+.register-info .register-button:hover {
+    font-weight: 400;
 }

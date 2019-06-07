@@ -1,6 +1,9 @@
 {
     "login": {
         "title": "Autoryzacja",
+        "nameLabel": "Name",
+        "passwordLabel": "Password",
+        "buttonLogin": "Login",
         "form": {
             "password": "Hasło",
             "password.placeholder": "Twoje hasło",

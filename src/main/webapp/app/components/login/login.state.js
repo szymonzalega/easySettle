@@ -16,7 +16,7 @@
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/components/login/login2.html',
+                    templateUrl: 'app/components/login/login.html',
                     controller: 'LoginController',
                     controllerAs: 'vm'
                 }

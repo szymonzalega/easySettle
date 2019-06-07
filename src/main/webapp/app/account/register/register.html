@@ -1,3 +1,41 @@
+<div class="groups-center-box">
+    <div class="groups-element-list">
+
+        <section-title upper="'Login'"></section-title>
+
+
+        <easy-input name="'field_name'" input-model="vm.registerAccount.login"
+                    label="'register.userNameLabel'"
+                    placeholder="'register.userNameLabel'"></easy-input>
+
+        <easy-input name="'field_email'" input-model="vm.registerAccount.email"
+                    label="'register.emailLabel'"
+                    placeholder="'register.emailLabel'"></easy-input>
+
+        <easy-input name="'field_pass'" input-model="vm.registerAccount.password"
+                    label="'register.passwordLabel'"
+                    type="'password'"
+                    placeholder="'register.passwordLabel'"></easy-input>
+
+        <easy-input name="'field_confirm'" input-model="vm.confirmPassword"
+                    label="'register.confirmPasswordLabel'"
+                    type="'password'"
+                    placeholder="'register.confirmPasswordLabel'"></easy-input>
+
+        <div class="align-right elem-button-outline btn-small move-to-right margin-15-px"
+             ng-click="vm.register()">
+            {{'register.buttonRegister' | translate}}</span>
+        </div>
+
+        <div class="register-info">
+            <span>You have an account?</span><span class="register-button" ng-click="vm.login()">&nbsp;Login</span>
+        </div>
+
+    </div>
+</div>
+
+
+
 <div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

@@ -1,6 +1,10 @@
 {
     "register": {
         "title": "Registration",
+        "userNameLabel": "Username",
+        "emailLabel": "Email",
+        "confirmPasswordLabel": "Confirm password",
+        "buttonRegister": "Register",
         "form": {
             "button": "Register"
         },

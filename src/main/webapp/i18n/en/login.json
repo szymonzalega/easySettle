@@ -1,7 +1,7 @@
 {
     "login": {
         "title": "Sign in",
-        "nameLabel": "Name",
+        "loginLabel": "Login",
         "passwordLabel": "Password",
         "buttonLogin": "Login",
         "form": {

@@ -266,6 +266,12 @@
     font-family: 'Roboto';
 }
 
+.gray-small-button {
+    color: #6b6b6b;
+    border: 2px solid #808080;
+    font-size: 14px !important;
+}
+
 .elem-button-outline:hover {
     background-color: #f5f2f0;
 }

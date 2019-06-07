@@ -5,9 +5,9 @@
         .module('easySettleApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['Auth', '$rootScope', '$scope', 'Principal', 'LoginService', '$state'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController (Auth, $rootScope, $scope, Principal, LoginService, $state) {
         var vm = this;
 
         vm.account = null;
@@ -35,6 +35,7 @@
 
         vm.goToRegister = function () {
             $state.go('register');
-        }
+        };
+
     }
 })();

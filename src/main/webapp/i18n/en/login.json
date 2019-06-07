@@ -2,6 +2,7 @@
     "login": {
         "title": "Sign in",
         "loginLabel": "Login",
+        "nameLabel": "Name",
         "passwordLabel": "Password",
         "buttonLogin": "Login",
         "form": {

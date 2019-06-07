@@ -123,6 +123,7 @@
     <script src="app/components/util/base64.service.js"></script>
     <script src="app/components/login/login.service.js"></script>
     <script src="app/components/login/login.controller.js"></script>
+    <script src="app/components/login/logout.controller.js"></script>
     <script src="app/components/language/language.service.js"></script>
     <script src="app/components/language/language.filter.js"></script>
     <script src="app/components/language/language.controller.js"></script>
@@ -199,9 +200,16 @@
 </head>
 <body ng-app="easySettleApp">
 
-<div ng-if="true" ui-view="navbar" ng-cloak></div>
+<div ng-if="false" ui-view="navbar" ng-cloak></div>
 
 <div class="container-app">
+    <div class="logout-box" ng-hide="logged == false">
+        <div class="align-right elem-button-outline btn-small move-to-right margin-15-px gray-small-button"
+             ui-sref="logout">
+            <span>Logout</span><span class="icon-logout glyphicon glyphicon-log-out"></span>
+        </div>
+    </div>
+
     <div ui-view="content">
         <!-- Angular views -->
     </div>

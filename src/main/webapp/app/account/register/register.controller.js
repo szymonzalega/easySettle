@@ -6,12 +6,13 @@
         .controller('RegisterController', RegisterController);
 
 
-    RegisterController.$inject = ['$state', '$translate', '$timeout', 'Auth', 'LoginService', 'errorConstants'];
+    RegisterController.$inject = ['$rootScope', '$state', '$translate', '$timeout', 'Auth', 'LoginService', 'errorConstants'];
 
-    function RegisterController ($state, $translate, $timeout, Auth, LoginService, errorConstants) {
+    function RegisterController ($rootScope, $state, $translate, $timeout, Auth, LoginService, errorConstants) {
         var vm = this;
 
         vm.doNotMatch = null;
+        $rootScope.logged = false;
         vm.error = null;
         vm.errorUserExists = null;
         vm.register = register;

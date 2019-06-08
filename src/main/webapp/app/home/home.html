@@ -1,3 +1,14 @@
+<div class="change-language-box">
+    <div class="change-language-inside">
+        <span class="language-elem"
+              ng-repeat="lang in vm.languages"
+              ng-click="vm.changeLanguage(lang.value)"
+              ng-class="{ 'active-language': (vm.settedLang == lang.value) }">
+            {{lang.name}}
+        </span>
+    </div>
+</div>
+
 <div class="groups-center-box fadein">
     <div class="home-login">
 
@@ -12,11 +23,11 @@
             <div class="button-box">
                 <div class="elem-button-outline btn-big home-btn primary-button"
                      ng-click="vm.goToLogin()">
-                    Login
+                    {{'home.login' | translate}}
                 </div>
                 <div class="elem-button-outline btn-big primary-button"
                      ng-click="vm.goToRegister()">
-                    Register
+                    {{'home.register' | translate}}
                 </div>
             </div>
         </div>

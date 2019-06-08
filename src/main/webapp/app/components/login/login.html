@@ -1,17 +1,17 @@
 <div class="groups-center-box">
     <div class="groups-element-list">
 
-        <section-title upper="'Login'"></section-title>
+        <section-title upper="'login.title'"></section-title>
 
 
         <easy-input name="'field_name'" input-model="vm.username"
                     label="'login.nameLabel'"
-                    placeholder="'login.nameLabel'"></easy-input>
+                    placeholder="'login.namePlaceholder'"></easy-input>
 
         <easy-input name="'field_member_name'" input-model="vm.password"
                     label="'login.passwordLabel'"
                     type="'password'"
-                    placeholder="'login.passwordLabel'"></easy-input>
+                    placeholder="'login.passwordPlaceholder'"></easy-input>
 
         <div class="align-right elem-button-outline btn-small move-to-right margin-15-px"
              ng-click="vm.login($event)">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="register-info">
-            <span>You don't have an account yet?</span><span class="register-button" ng-click="vm.register()">&nbsp;Register</span>
+            <span>{{'login.question' | translate}}</span><span class="register-button" ng-click="vm.register()">&nbsp;{{'login.registerButton' | translate}}</span>
         </div>
 
     </div>

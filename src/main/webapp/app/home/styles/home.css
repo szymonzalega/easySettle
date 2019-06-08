@@ -73,3 +73,27 @@
     margin-bottom: 5px;
     margin-left: 4px;
 }
+
+.change-language-box {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.change-language-box .change-language-inside {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px 0 0;
+}
+
+.change-language-box .change-language-inside .language-elem {
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.active-language {
+    color: #2c7be5;
+    font-weight: 400;
+}

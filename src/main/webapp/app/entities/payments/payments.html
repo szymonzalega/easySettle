@@ -1,7 +1,7 @@
 <div class="groups-center-box fadein">
     <div class="groups-element-list">
 
-        <section-title upper="'Payments'" down="vm.groupParams.name"></section-title>
+        <section-title upper="'easySettleApp.payments.title'" down="vm.groupParams.name"></section-title>
 
         <div class="payment-element element-hover" ng-repeat="payment in vm.payments" ng-click="vm.goToPaymentDetails(payment)">
 
@@ -28,7 +28,7 @@
             <div class="payment-members-box">
 
                 <div class="payer-column">
-                    <span>{{payment.payerName}} payed for: </span>
+                    <span>{{payment.payerName}} {{'easySettleApp.payments.payedFor' | translate}}: </span>
                 </div>
                 <div class="loaners-column">
                     <div ng-repeat="loanerName in payment.loanersNameList">

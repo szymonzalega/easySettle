@@ -1,18 +1,18 @@
 <div class="groups-center-box fadein">
     <div class="groups-element-list">
 
-        <section-title upper="'Create payment'" down="vm.groupParams.name"></section-title>
+        <section-title upper="'easySettleApp.payments.createTitle'" down="vm.groupParams.name"></section-title>
 
 
         <easy-input name="'field_name'" input-model="vm.payment.name"
-                    label="'easySettleApp.payments.create.paymentName'"
-                    placeholder="'easySettleApp.payments.create.paymentName'"></easy-input>
+                    label="'easySettleApp.payments.name'"
+                    placeholder="'easySettleApp.payments.name'"></easy-input>
 
         <easy-input name="'field_member_name'" input-model="vm.payment.amount"
-                    label="'easySettleApp.payments.create.paymentAmount'"
-                    placeholder="'easySettleApp.payments.create.paymentAmount'"></easy-input>
+                    label="'easySettleApp.payments.amount'"
+                    placeholder="'easySettleApp.payments.amount'"></easy-input>
 
-        <easy-label label="'easySettleApp.payments.create.payerName'"></easy-label>
+        <easy-label label="'easySettleApp.payments.whoPaid'"></easy-label>
 
         <div class="payment-create-new" ng-if="!vm.payment.selectedPayer">
             <div class="no-margin">
@@ -38,7 +38,7 @@
         </div>
 
         <div ng-if="vm.payment.selectedPayer">
-            <easy-label label="'easySettleApp.payments.create.loanerName'"></easy-label>
+            <easy-label label="'easySettleApp.payments.forWho'"></easy-label>
 
             <div class="payment-create-new">
                 <div ng-repeat="member in vm.memberList" ng-class="{ 'selected-member': (member.selected), 'no-margin': ($index == 0) }">

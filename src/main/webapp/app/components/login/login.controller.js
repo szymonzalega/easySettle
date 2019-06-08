@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.authenticationError = false;
+        $rootScope.logged = false;
         vm.cancel = cancel;
         vm.credentials = {};
         vm.login = login;

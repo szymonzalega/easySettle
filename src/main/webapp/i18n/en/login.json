@@ -1,23 +1,13 @@
 {
     "login": {
-        "title": "Sign in",
+        "title": "Login",
         "loginLabel": "Login",
+        "namePlaceholder": "Type your name",
         "nameLabel": "Name",
         "passwordLabel": "Password",
+        "passwordPlaceholder": "Type your password",
         "buttonLogin": "Login",
-        "form": {
-            "password": "Password",
-            "password.placeholder": "Your password",
-            "rememberme": "Remember me",
-            "button": "Sign in"
-        },
-        "messages": {
-            "error": {
-                "authentication": "<strong>Failed to sign in!</strong> Please check your credentials and try again."
-            }
-        },
-        "password" : {
-            "forgot": "Did you forget your password?"
-        }
+        "question": "You don't have an account yet?",
+        "registerButton": "Register"
     }
 }

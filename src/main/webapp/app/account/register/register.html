@@ -1,7 +1,7 @@
 <div class="groups-center-box">
     <div class="groups-element-list">
 
-        <section-title upper="'Register'"></section-title>
+        <section-title upper="'register.title'"></section-title>
 
 
         <easy-input name="'field_name'" input-model="vm.registerAccount.login"
@@ -28,7 +28,7 @@
         </div>
 
         <div class="register-info">
-            <span>You have an account?</span><span class="register-button" ng-click="vm.login()">&nbsp;Login</span>
+            <span>{{'register.question' | translate}}</span><span class="register-button" ng-click="vm.login()">&nbsp;{{'register.buttonLogin' | translate}}</span>
         </div>
 
     </div>

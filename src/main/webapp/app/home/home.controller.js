@@ -5,14 +5,15 @@
         .module('easySettleApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['Auth', '$rootScope', '$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['JhiLanguageService', '$translate', 'tmhDynamicLocale', 'Auth', '$rootScope', '$scope', 'Principal', 'LoginService', '$state'];
 
-    function HomeController (Auth, $rootScope, $scope, Principal, LoginService, $state) {
+    function HomeController (JhiLanguageService, $translate, tmhDynamicLocale, Auth, $rootScope, $scope, Principal, LoginService, $state) {
         var vm = this;
 
         vm.account = null;
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
+        $rootScope.logged = false;
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });
@@ -36,6 +37,26 @@
         vm.goToRegister = function () {
             $state.go('register');
         };
+
+        vm.languages = [];
+        JhiLanguageService.getAll().then(function (languages) {
+            angular.forEach(languages, function (item) {
+                var lang = {
+                    name: item.toUpperCase(),
+                    value: item
+                };
+                vm.languages.push(lang);
+            })
+        });
+
+        vm.settedLang = tmhDynamicLocale.get();
+
+
+        vm.changeLanguage = function (languageKey) {
+            $translate.use(languageKey);
+            tmhDynamicLocale.set(languageKey);
+            vm.settedLang = languageKey;
+        }
 
     }
 })();

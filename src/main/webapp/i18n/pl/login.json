@@ -1,22 +1,12 @@
 {
     "login": {
-        "title": "Autoryzacja",
-        "nameLabel": "Name",
-        "passwordLabel": "Password",
-        "buttonLogin": "Login",
-        "form": {
-            "password": "Hasło",
-            "password.placeholder": "Twoje hasło",
-            "rememberme": "Zapamiętaj mnie",
-            "button": "Zaloguj"
-        },
-        "messages": {
-            "error": {
-                "authentication": "<strong>Nieudane logowanie!</strong> Sprawdź swoje dane logowania i spróbuj ponownie."
-            }
-        },
-        "password" : {
-            "forgot": "Zapomniałeś swojego hasła?"
-        }
+        "title": "Logowanie",
+        "nameLabel": "Nazwa",
+        "namePlaceholder": "Wpisz nazwę",
+        "passwordLabel": "Hasło",
+        "passwordPlaceholder": "Wpisz hasło",
+        "buttonLogin": "Zaloguj",
+        "question": "Nie masz jeszcze konta?",
+        "registerButton": "Zarejestruj się"
     }
 }

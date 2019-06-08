@@ -1,33 +1,13 @@
-
 {
     "easySettleApp": {
         "payments" : {
-            "create": {
-                "paymentName": "Payment name",
-                "paymentAmount": "Amount",
-                "payerName": "Who paid",
-                "loanerName": "For who"
-            },
-            "home": {
-                "title": "Payments",
-                "createLabel": "Create a new Payments",
-                "createOrEditLabel": "Create or edit a Payments"
-            },
-            "created": "A new Payments is created with identifier {{ param }}",
-            "updated": "A Payments is updated with identifier {{ param }}",
-            "deleted": "A Payments is deleted with identifier {{ param }}",
-            "delete": {
-                "question": "Are you sure you want to delete Payments {{ id }}?"
-            },
-            "detail": {
-                "title": "Payments"
-            },
-            "amount": "Amount",
+            "createTitle": "New payment",
             "name": "Name",
-            "date": "Date",
-            "payerName": "Payer",
-            "loanersName": "Loaners",
-            "transfers": "Transfers"
+            "amount": "Amount",
+            "whoPaid": "Who paid",
+            "forWho": "For who",
+            "title": "Payments",
+            "payedFor": "payed for"
         }
     }
 }

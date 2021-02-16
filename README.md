@@ -1,5 +1,36 @@
 # easySettle
-This application was generated using JHipster 4.14.5, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.5](http://www.jhipster.tech/documentation-archive/v4.14.5).
+
+## Description
+
+This application was created as my engineer's thesis.
+
+Topic: A Web-based application supporting expenditure management of a group
+
+## Screenshots
+
+1. Create new group: You can create new group for collect expenses. Enter the name and add participants
+
+![New group](/docs/save-group.jpg?raw=true "New group")
+
+2. Groups list: Manage your groups
+
+![Groups list view](/docs/groups.jpg?raw=true "Groups list view")
+
+3. Group balance: Control your group's balance
+
+![Group balance view](/docs/balance-group.jpg?raw=true "Group balance view")
+
+4. New payement: Create new payment, enter the name, amount, who paid and for whom
+
+![New payment view](/docs/new-payment.jpg?raw=true "New payment view")
+
+5. Payments list in group: List of all payments made in the group
+
+![Payments list view](/docs/payments.jpg?raw=true "Payments list view")
+
+6. Summary: Application create summary for you. Now you can settle in easy way
+
+![Summary](/docs/summary.jpg?raw=true "Summary")
 
 ## Development
 
@@ -31,8 +62,6 @@ Add the `-h` flag on any command to see how you can use it. For example, `bower 
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
-
-
 ## Building for production
 
 To optimize the easySettle application for production, run:
@@ -59,8 +88,6 @@ To launch your application's tests, run:
 Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
 
     gulp test
-
-
 
 For more information, refer to the [Running tests page][].
 
@@ -91,23 +118,20 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
-[JHipster Homepage and latest documentation]: http://www.jhipster.tech
-[JHipster 4.14.5 archive]: http://www.jhipster.tech/documentation-archive/v4.14.5
-
-[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.14.5/development/
-[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.14.5/docker-compose
-[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.14.5/production/
-[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.14.5/running-tests/
-[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.14.5/setting-up-ci/
-
-
-[Node.js]: https://nodejs.org/
-[Yarn]: https://yarnpkg.org/
-[Bower]: http://bower.io/
-[Gulp]: http://gulpjs.com/
-[BrowserSync]: http://www.browsersync.io/
-[Karma]: http://karma-runner.github.io/
-[Jasmine]: http://jasmine.github.io/2.0/introduction.html
-[Protractor]: https://angular.github.io/protractor/
-[Leaflet]: http://leafletjs.com/
-[DefinitelyTyped]: http://definitelytyped.org/
+[jhipster homepage and latest documentation]: http://www.jhipster.tech
+[jhipster 4.14.5 archive]: http://www.jhipster.tech/documentation-archive/v4.14.5
+[using jhipster in development]: http://www.jhipster.tech/documentation-archive/v4.14.5/development/
+[using docker and docker-compose]: http://www.jhipster.tech/documentation-archive/v4.14.5/docker-compose
+[using jhipster in production]: http://www.jhipster.tech/documentation-archive/v4.14.5/production/
+[running tests page]: http://www.jhipster.tech/documentation-archive/v4.14.5/running-tests/
+[setting up continuous integration]: http://www.jhipster.tech/documentation-archive/v4.14.5/setting-up-ci/
+[node.js]: https://nodejs.org/
+[yarn]: https://yarnpkg.org/
+[bower]: http://bower.io/
+[gulp]: http://gulpjs.com/
+[browsersync]: http://www.browsersync.io/
+[karma]: http://karma-runner.github.io/
+[jasmine]: http://jasmine.github.io/2.0/introduction.html
+[protractor]: https://angular.github.io/protractor/
+[leaflet]: http://leafletjs.com/
+[definitelytyped]: http://definitelytyped.org/
